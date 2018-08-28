@@ -46,16 +46,16 @@ class dvl_widget extends WP_Widget {
 
       $url = $video_item->link;
 
-      $youtube_url = get_metadata ('post', $video_item->ID)["_dvl_youtube_url"][0];
+      $youtube_id = get_metadata ('post', $video_item->ID)["_dvl_youtube_url"][0];
 
       print '<div class="videoswidget">';
       print '<div class="video-item">';
-      if ($youtube_url) {
-         print '<a href="' . $url . '" class="thumb">' . ' ' . '</a>'; // TODO: Embed the YouTube video here
+      if ($youtube_id) {
+         print '<a href="' . $url . '" class="thumb"><div class="link-target"></div><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $youtube_id . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></a>';
       }
       print '<h4>' . $video_item->post_title . '</h4>';
-      print $video_item->post_excerpt;
-      print '<a href="' . $url . '">View Details</a>';
+      //print $video_item->post_excerpt;
+      print '<a href="' . $url . '">Watch Video</a>';
       print '</div>';
       print '</div>';
 

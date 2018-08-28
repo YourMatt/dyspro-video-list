@@ -43,7 +43,6 @@ class dvl_plugin_manager {
             'menu_icon' => 'dashicons-video-alt3',
             'menu_position' => DVL_ADMIN_LINK_POSITION,
             'supports' => array (
-               'thumbnail',
                'title',
                'editor',
                'excerpt'
